@@ -59,7 +59,7 @@ env:
 jobs:
   build:
     name: Build & package unsigned IPA
-    runs-on: macos-15
+    runs-on: macos-26
     timeout-minutes: 120
 
     steps:
@@ -89,21 +89,25 @@ jobs:
 
       # ------------------------------------------------------------------
       # 2. Select the Xcode version available on the runner.
-      #    The project requires Swift 6.1 (Xcode 16.3+); macos-15 runners ship
-      #    several Xcode 16 releases.
+      #    The project requires Swift 6.1 (Xcode 16.3+), but HXPhotoPicker
+      #    (Dependencies fetched via SPM) now unconditionally references
+      #    iOS 26 SDK-only APIs (UINavigationBar.setNeedsUpdateProperties()
+      #    and UIButton.Configuration.glass()) that don't exist at all in
+      #    the Xcode 16 SDKs, so an Xcode 26+ toolchain (available on the
+      #    macos-26 runner image) is required to compile it.
       # ------------------------------------------------------------------
       - name: Select Xcode
         run: |
           set -euo pipefail
-          # Prefer the newest Xcode 16.3+ bundled with the runner image.
+          # Prefer the newest Xcode 26+ bundled with the runner image.
           candidates=()
-          for candidate in /Applications/Xcode_16.[3-9]*.app; do
+          for candidate in /Applications/Xcode_2[6-9]*.app; do
             if [ -d "$candidate" ]; then
               candidates+=("$candidate")
             fi
           done
           if ((${#candidates[@]} == 0)); then
-            echo "::error::Xcode 16.3 or newer is required for Swift tools version 6.1"
+            echo "::error::Xcode 26 or newer is required to compile HXPhotoPicker's iOS 26 SDK APIs"
             exit 1
           fi
           candidate="${candidates[${#candidates[@]}-1]}"
