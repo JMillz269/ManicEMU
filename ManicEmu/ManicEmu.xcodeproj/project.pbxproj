@@ -919,7 +919,6 @@
 		57BA59B52E3F13D100110849 /* EmulationCore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57BA59B42E3F13C900110849 /* EmulationCore.swift */; };
 		57BA7467303486ED0039E284 /* FocusShortcutsTipsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57BA7463303486E20039E284 /* FocusShortcutsTipsView.swift */; };
 		57BA7468303486ED0039E284 /* FocusShortcutsTipsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57BA7463303486E20039E284 /* FocusShortcutsTipsView.swift */; };
-		57BA74A7303555CB0039E284 /* LibretroSymbian.m in Sources */ = {isa = PBXBuildFile; fileRef = 57BA74A6303555CB0039E284 /* LibretroSymbian.m */; };
 		57BF5ECB2FDB08FE0073D318 /* ASSwitchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57BF5EC72FDB08F60073D318 /* ASSwitchView.swift */; };
 		57BF5ECC2FDB08FE0073D318 /* ASSwitchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57BF5EC72FDB08F60073D318 /* ASSwitchView.swift */; };
 		57BF5ED92FDB09A80073D318 /* ASCheckView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57BF5ED52FDB09A00073D318 /* ASCheckView.swift */; };
@@ -988,10 +987,6 @@
 		57C75AEC2FD5741C0093A2B3 /* LibretroDisk.m in Sources */ = {isa = PBXBuildFile; fileRef = 57C75AE22FD5741C0093A2B3 /* LibretroDisk.m */; };
 		57C75AED2FD5741C0093A2B3 /* LibretroPSPGame.m in Sources */ = {isa = PBXBuildFile; fileRef = 57C75AE62FD5741C0093A2B3 /* LibretroPSPGame.m */; };
 		57C75AEE2FD5741C0093A2B3 /* AzaharKeyboardConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 57C75ADC2FD5741C0093A2B3 /* AzaharKeyboardConfig.m */; };
-		57C75AF22FD5741C0093A2B3 /* LibretroShaderPreview.m in Sources */ = {isa = PBXBuildFile; fileRef = 57C75AF12FD5741C0093A2B3 /* LibretroShaderPreview.m */; };
-		57C75AFB2FD5741C0093A2B3 /* LibretroHost.m in Sources */ = {isa = PBXBuildFile; fileRef = 57C75AFA2FD5741C0093A2B3 /* LibretroHost.m */; };
-		57C75B022FD5741C0093A2B3 /* LibretroShaderPreviewCommon.m in Sources */ = {isa = PBXBuildFile; fileRef = 57C75B012FD5741C0093A2B3 /* LibretroShaderPreviewCommon.m */; };
-		57C75B052FD5741C0093A2B3 /* LibretroShaderPreviewGL.m in Sources */ = {isa = PBXBuildFile; fileRef = 57C75B042FD5741C0093A2B3 /* LibretroShaderPreviewGL.m */; };
 		57C75B502FD5928E0093A2B3 /* MoltenVK.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 57C75B4D2FD592860093A2B3 /* MoltenVK.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		57C79DD42FE3E664003C737F /* Functions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57C79DD22FE3E65D003C737F /* Functions.swift */; };
 		57C79DD52FE3E664003C737F /* Functions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57C79DD22FE3E65D003C737F /* Functions.swift */; };
@@ -2159,8 +2154,6 @@
 		57BA45C12D1B235400BCA5E1 /* Config-Base.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "Config-Base.xcconfig"; sourceTree = "<group>"; };
 		57BA59B42E3F13C900110849 /* EmulationCore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmulationCore.swift; sourceTree = "<group>"; };
 		57BA7463303486E20039E284 /* FocusShortcutsTipsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FocusShortcutsTipsView.swift; sourceTree = "<group>"; };
-		57BA74A5303555CB0039E284 /* LibretroSymbian.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = LibretroSymbian.h; path = pkg/apple/ManicEMU/LibretroSymbian.h; sourceTree = "<group>"; };
-		57BA74A6303555CB0039E284 /* LibretroSymbian.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = LibretroSymbian.m; path = pkg/apple/ManicEMU/LibretroSymbian.m; sourceTree = "<group>"; };
 		57BA74C530356A620039E284 /* libcanvasfont.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = libcanvasfont.js; sourceTree = "<group>"; };
 		57BA74C630356A620039E284 /* libcanvasgraphics.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = libcanvasgraphics.js; sourceTree = "<group>"; };
 		57BA74C730356A620039E284 /* libgles2.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = libgles2.js; sourceTree = "<group>"; };
@@ -6434,14 +6427,6 @@
 		57C75AE62FD5741C0093A2B3 /* LibretroPSPGame.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = LibretroPSPGame.m; path = pkg/apple/ManicEMU/LibretroPSPGame.m; sourceTree = "<group>"; };
 		57C75AE72FD5741C0093A2B3 /* LibretroShaders.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = LibretroShaders.h; path = pkg/apple/ManicEMU/LibretroShaders.h; sourceTree = "<group>"; };
 		57C75AE82FD5741C0093A2B3 /* LibretroShaders.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = LibretroShaders.m; path = pkg/apple/ManicEMU/LibretroShaders.m; sourceTree = "<group>"; };
-		57C75AF02FD5741C0093A2B3 /* LibretroShaderPreview.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = LibretroShaderPreview.h; path = ../Dependencies/Libretro/ui/drivers/cocoa/LibretroShaderPreview.h; sourceTree = SOURCE_ROOT; };
-		57C75AF12FD5741C0093A2B3 /* LibretroShaderPreview.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = LibretroShaderPreview.m; path = ../Dependencies/Libretro/ui/drivers/LibretroShaderPreview.m; sourceTree = SOURCE_ROOT; };
-		57C75AF92FD5741C0093A2B3 /* LibretroHost.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = LibretroHost.h; path = pkg/apple/ManicEMU/LibretroHost.h; sourceTree = "<group>"; };
-		57C75AFA2FD5741C0093A2B3 /* LibretroHost.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = LibretroHost.m; path = pkg/apple/ManicEMU/LibretroHost.m; sourceTree = "<group>"; };
-		57C75B002FD5741C0093A2B3 /* LibretroShaderPreviewCommon.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = LibretroShaderPreviewCommon.h; path = ../Dependencies/Libretro/ui/drivers/cocoa/LibretroShaderPreviewCommon.h; sourceTree = SOURCE_ROOT; };
-		57C75B012FD5741C0093A2B3 /* LibretroShaderPreviewCommon.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = LibretroShaderPreviewCommon.m; path = ../Dependencies/Libretro/ui/drivers/LibretroShaderPreviewCommon.m; sourceTree = SOURCE_ROOT; };
-		57C75B032FD5741C0093A2B3 /* LibretroShaderPreviewGL.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = LibretroShaderPreviewGL.h; path = ../Dependencies/Libretro/ui/drivers/cocoa/LibretroShaderPreviewGL.h; sourceTree = SOURCE_ROOT; };
-		57C75B042FD5741C0093A2B3 /* LibretroShaderPreviewGL.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = LibretroShaderPreviewGL.m; path = ../Dependencies/Libretro/ui/drivers/LibretroShaderPreviewGL.m; sourceTree = SOURCE_ROOT; };
 		57C75B4D2FD592860093A2B3 /* MoltenVK.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = MoltenVK.xcframework; path = ../Dependencies/Libretro/pkg/apple/Frameworks/MoltenVK.xcframework; sourceTree = SOURCE_ROOT; };
 		57C79DD22FE3E65D003C737F /* Functions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Functions.swift; sourceTree = "<group>"; };
 		57C79DE02FE3EC43003C737F /* ASSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ASSheetView.swift; sourceTree = "<group>"; };
@@ -12438,16 +12423,12 @@
 				57C75AE02FD5741C0093A2B3 /* LibretroCoreOptions.m */,
 				57C75AE12FD5741C0093A2B3 /* LibretroDisk.h */,
 				57C75AE22FD5741C0093A2B3 /* LibretroDisk.m */,
-				57C75AF92FD5741C0093A2B3 /* LibretroHost.h */,
-				57C75AFA2FD5741C0093A2B3 /* LibretroHost.m */,
 				57C75AE32FD5741C0093A2B3 /* LibretroKeyboardCode.h */,
 				57C75AE42FD5741C0093A2B3 /* LibretroKeyboardCode.m */,
 				57C75AE52FD5741C0093A2B3 /* LibretroPSPGame.h */,
 				57C75AE62FD5741C0093A2B3 /* LibretroPSPGame.m */,
 				57C75AE72FD5741C0093A2B3 /* LibretroShaders.h */,
 				57C75AE82FD5741C0093A2B3 /* LibretroShaders.m */,
-				57BA74A5303555CB0039E284 /* LibretroSymbian.h */,
-				57BA74A6303555CB0039E284 /* LibretroSymbian.m */,
 				57BFBE4C2DD3326400AABF98 /* menu_pipeline.metal */,
 				57BFBE4E2DD3326F00AABF98 /* Shaders.metal */,
 				57BFBE502DD3328500AABF98 /* JITSupport.h */,
@@ -12458,12 +12439,6 @@
 				57BFBE562DD332A100AABF98 /* cocoa_common.m */,
 				57BFBE572DD332A100AABF98 /* LibretroCore.h */,
 				57BFBE5E2DD332DA00AABF98 /* LibretroCore.m */,
-				57C75AF02FD5741C0093A2B3 /* LibretroShaderPreview.h */,
-				57C75AF12FD5741C0093A2B3 /* LibretroShaderPreview.m */,
-				57C75B002FD5741C0093A2B3 /* LibretroShaderPreviewCommon.h */,
-				57C75B012FD5741C0093A2B3 /* LibretroShaderPreviewCommon.m */,
-				57C75B032FD5741C0093A2B3 /* LibretroShaderPreviewGL.h */,
-				57C75B042FD5741C0093A2B3 /* LibretroShaderPreviewGL.m */,
 				5720E7A12E541BE900EC0DA5 /* CheevosBridge.h */,
 				5720E7A22E541BF500EC0DA5 /* CheevosBridge.m */,
 				57BFBE642DD3330900AABF98 /* keyboard_event_apple.h */,
@@ -13902,17 +13877,12 @@
 				57C75AEB2FD5741C0093A2B3 /* LibretroShaders.m in Sources */,
 				57C75AE92FD5741C0093A2B3 /* LibretroKeyboardCode.m in Sources */,
 				57C75AEC2FD5741C0093A2B3 /* LibretroDisk.m in Sources */,
-				57C75AFB2FD5741C0093A2B3 /* LibretroHost.m in Sources */,
 				57BFBE6C2DD3331A00AABF98 /* griffin_cpp.cpp in Sources */,
 				57BFBE6E2DD3331A00AABF98 /* griffin_objc.m in Sources */,
 				57BFBE5F2DD332DA00AABF98 /* LibretroCore.m in Sources */,
-				57C75AF22FD5741C0093A2B3 /* LibretroShaderPreview.m in Sources */,
-				57C75B022FD5741C0093A2B3 /* LibretroShaderPreviewCommon.m in Sources */,
-				57C75B052FD5741C0093A2B3 /* LibretroShaderPreviewGL.m in Sources */,
 				57BFBE6D2DD3331A00AABF98 /* griffin.c in Sources */,
 				5720E7A32E541BF500EC0DA5 /* CheevosBridge.m in Sources */,
 				57BFBE522DD3328500AABF98 /* JITSupport.m in Sources */,
-				57BA74A7303555CB0039E284 /* LibretroSymbian.m in Sources */,
 				57C75AEE2FD5741C0093A2B3 /* AzaharKeyboardConfig.m in Sources */,
 				57C75AEA2FD5741C0093A2B3 /* LibretroCoreOptions.m in Sources */,
 				57C75AED2FD5741C0093A2B3 /* LibretroPSPGame.m in Sources */,
