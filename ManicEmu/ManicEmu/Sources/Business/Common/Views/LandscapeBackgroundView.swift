@@ -10,6 +10,23 @@ import Kingfisher
 import VisualEffectView
 import BlurUIKit
 
+private final class MetalToyView: UIView {
+    var renderScale: CGFloat = 1
+    var preferredFramesPerSecond = 30
+
+    init(glslSource: String) {
+        super.init(frame: .zero)
+    }
+
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+
+    func start() {}
+    func stop() {}
+    func pause() {}
+}
+
 ///横屏模式的动态背景视图
 ///无背景图时自动播放ShaderToy动态背景 有背景图时展示静态图片并支持暗角/模糊/压暗等效果处理
 class LandscapeBackgroundView: BaseView {

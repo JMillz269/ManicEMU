@@ -993,8 +993,6 @@
 		57C75B022FD5741C0093A2B3 /* LibretroShaderPreviewCommon.m in Sources */ = {isa = PBXBuildFile; fileRef = 57C75B012FD5741C0093A2B3 /* LibretroShaderPreviewCommon.m */; };
 		57C75B052FD5741C0093A2B3 /* LibretroShaderPreviewGL.m in Sources */ = {isa = PBXBuildFile; fileRef = 57C75B042FD5741C0093A2B3 /* LibretroShaderPreviewGL.m */; };
 		57C75B502FD5928E0093A2B3 /* MoltenVK.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 57C75B4D2FD592860093A2B3 /* MoltenVK.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		57C75B622FD5741C0093A2B3 /* MetalToyView.h in Headers */ = {isa = PBXBuildFile; fileRef = 57C75B602FD5741C0093A2B3 /* MetalToyView.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		57C75B632FD5741C0093A2B3 /* MetalToyView.mm in Sources */ = {isa = PBXBuildFile; fileRef = 57C75B612FD5741C0093A2B3 /* MetalToyView.mm */; settings = {COMPILER_FLAGS = "-std=gnu++17 -I$(SRCROOT)/../Dependencies/Libretro/deps/glslang/glslang"; }; };
 		57C79DD42FE3E664003C737F /* Functions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57C79DD22FE3E65D003C737F /* Functions.swift */; };
 		57C79DD52FE3E664003C737F /* Functions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57C79DD22FE3E65D003C737F /* Functions.swift */; };
 		57C79DE12FE3EC49003C737F /* ASSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57C79DE02FE3EC43003C737F /* ASSheetView.swift */; };
@@ -6445,8 +6443,6 @@
 		57C75B032FD5741C0093A2B3 /* LibretroShaderPreviewGL.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = LibretroShaderPreviewGL.h; path = ../Dependencies/Libretro/ui/drivers/cocoa/LibretroShaderPreviewGL.h; sourceTree = SOURCE_ROOT; };
 		57C75B042FD5741C0093A2B3 /* LibretroShaderPreviewGL.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = LibretroShaderPreviewGL.m; path = ../Dependencies/Libretro/ui/drivers/LibretroShaderPreviewGL.m; sourceTree = SOURCE_ROOT; };
 		57C75B4D2FD592860093A2B3 /* MoltenVK.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = MoltenVK.xcframework; path = ../Dependencies/Libretro/pkg/apple/Frameworks/MoltenVK.xcframework; sourceTree = SOURCE_ROOT; };
-		57C75B602FD5741C0093A2B3 /* MetalToyView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = MetalToyView.h; path = ../Dependencies/Libretro/ui/drivers/cocoa/MetalToyView.h; sourceTree = SOURCE_ROOT; };
-		57C75B612FD5741C0093A2B3 /* MetalToyView.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; name = MetalToyView.mm; path = ../Dependencies/Libretro/ui/drivers/MetalToyView.mm; sourceTree = SOURCE_ROOT; };
 		57C79DD22FE3E65D003C737F /* Functions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Functions.swift; sourceTree = "<group>"; };
 		57C79DE02FE3EC43003C737F /* ASSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ASSheetView.swift; sourceTree = "<group>"; };
 		57C81DAD2FD6082600A8D0A1 /* LibretroNetplayAnalogDpad.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibretroNetplayAnalogDpad.swift; sourceTree = "<group>"; };
@@ -12468,8 +12464,6 @@
 				57C75B012FD5741C0093A2B3 /* LibretroShaderPreviewCommon.m */,
 				57C75B032FD5741C0093A2B3 /* LibretroShaderPreviewGL.h */,
 				57C75B042FD5741C0093A2B3 /* LibretroShaderPreviewGL.m */,
-				57C75B602FD5741C0093A2B3 /* MetalToyView.h */,
-				57C75B612FD5741C0093A2B3 /* MetalToyView.mm */,
 				5720E7A12E541BE900EC0DA5 /* CheevosBridge.h */,
 				5720E7A22E541BF500EC0DA5 /* CheevosBridge.m */,
 				57BFBE642DD3330900AABF98 /* keyboard_event_apple.h */,
@@ -13119,7 +13113,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				57BFBE5B2DD332A100AABF98 /* LibretroCore.h in Headers */,
-				57C75B622FD5741C0093A2B3 /* MetalToyView.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -13916,7 +13909,6 @@
 				57C75AF22FD5741C0093A2B3 /* LibretroShaderPreview.m in Sources */,
 				57C75B022FD5741C0093A2B3 /* LibretroShaderPreviewCommon.m in Sources */,
 				57C75B052FD5741C0093A2B3 /* LibretroShaderPreviewGL.m in Sources */,
-				57C75B632FD5741C0093A2B3 /* MetalToyView.mm in Sources */,
 				57BFBE6D2DD3331A00AABF98 /* griffin.c in Sources */,
 				5720E7A32E541BF500EC0DA5 /* CheevosBridge.m in Sources */,
 				57BFBE522DD3328500AABF98 /* JITSupport.m in Sources */,
