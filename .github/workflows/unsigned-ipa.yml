@@ -163,6 +163,7 @@ jobs:
             -destination 'generic/platform=iOS' \
             -archivePath "../${{ env.ARCHIVE_PATH }}" \
             -clonedSourcePackagesDirPath SourcePackages \
+            -skipPackagePluginValidation \
             CODE_SIGNING_ALLOWED=NO \
             CODE_SIGNING_REQUIRED=NO \
             CODE_SIGN_STYLE=Manual \
