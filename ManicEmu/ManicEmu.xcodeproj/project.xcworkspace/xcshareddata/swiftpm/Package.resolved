@@ -427,8 +427,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/SFSafeSymbols/SFSafeSymbols.git",
       "state" : {
-        "revision" : "e01b3d4f861412f8dcee8d93c417d2c2b0cdfd77",
-        "version" : "7.0.0"
+        "revision" : "68d10da0e48d76b31ce1a99e56bfbbcf7ce0a5a4",
+        "version" : "7.1.0"
       }
     },
     {
