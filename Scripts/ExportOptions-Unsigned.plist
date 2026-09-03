@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<!--
+		Export options used by the "Build Unsigned IPA" GitHub Actions workflow
+		(.github/workflows/unsigned-ipa.yml).
+
+		"ad-hoc" packaging produces a plain .ipa from the xcarchive. Combined
+		with the unsigned `xcodebuild archive` step (CODE_SIGNING_ALLOWED=NO)
+		and the absence of a signing team / certificate below, the exported app
+		is left unsigned so it can be re-signed by sideloading tools such as
+		AltStore, SideStore, Sideloadly, or TrollStore.
+
+		No Apple Developer account, certificate, provisioning profile, or
+		repository secret is needed.
+	-->
+	<key>method</key>
+	<string>ad-hoc</string>
+	<!-- Keep the app unsigned: do not inject a team, certificate, or profile. -->
+	<key>signingStyle</key>
+	<string>automatic</string>
+	<key>teamID</key>
+	<string></string>
+	<key>compileBitcode</key>
+	<false/>
+	<key>stripSwiftSymbols</key>
+	<true/>
+	<key>thinning</key>
+	<string>&lt;none&gt;</string>
+</dict>
+</plist>

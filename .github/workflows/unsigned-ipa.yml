@@ -1,0 +1,205 @@
+# Builds Manic EMU as an *unsigned* iOS .ipa suitable for sideloading
+# (e.g. via AltStore, SideStore, Sideloadly, TrollStore, …).
+#
+# No Apple Developer account, signing certificate, provisioning profile, or
+# repository secret is required: the app is archived with ad-hoc / "Sign to
+# Run Locally" signing and exported without a signing team.
+#
+# Run it manually from the repository's Actions tab → "Build Unsigned IPA".
+
+name: Build Unsigned IPA
+
+on:
+  workflow_dispatch:
+    inputs:
+      scheme:
+        description: >-
+          Xcode scheme to build. ManicEmuSideload is the dedicated unsigned /
+          sideload configuration. Change this only if the project layout or
+          scheme names change.
+        required: true
+        default: 'ManicEmuSideload'
+        type: choice
+        options:
+          - ManicEmuSideload
+          - ManicEmuRelease
+          - ManicEmuDebug
+      configuration:
+        description: >-
+          Build configuration passed to xcodebuild. SideloadRelease matches the
+          default scheme above.
+        required: true
+        default: 'SideloadRelease'
+        type: choice
+        options:
+          - SideloadRelease
+          - Release
+          - Debug
+
+# The workflow only needs to read the repository contents; the IPA is
+# published via the artifact store, which does not use GITHUB_TOKEN.
+permissions:
+  contents: read
+
+# Concurrency: cancel an older in-progress build if the workflow is
+# re-dispatched so we do not waste macOS runner minutes.
+concurrency:
+  group: unsigned-ipa-${{ github.ref }}
+  cancel-in-progress: true
+
+env:
+  # Directory that contains ManicEmu.xcodeproj (relative to repository root).
+  # Adjust this if the project ever moves or a workspace is introduced.
+  XCODE_PROJECT_DIR: ManicEmu
+  # Output locations used by the archive / export / upload steps.
+  ARCHIVE_PATH: build/ManicEmu.xcarchive
+  EXPORT_PATH: build/export
+  EXPORT_OPTIONS_PLIST: Scripts/ExportOptions-Unsigned.plist
+
+jobs:
+  build:
+    name: Build & package unsigned IPA
+    runs-on: macos-15
+    timeout-minutes: 120
+
+    steps:
+      # ------------------------------------------------------------------
+      # 1. Check out the repository *including submodules*.
+      #
+      #    The app embeds several dependencies as git submodules
+      #    (Dependencies/DeltaCore, CollectionViewPagingLayout, …) that are
+      #    referenced by the Xcode project, so the build fails without them.
+      #    Git LFS is also required: the prebuilt emulator cores under
+      #    Cores/*.framework are tracked with LFS and must be real binaries.
+      # ------------------------------------------------------------------
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          submodules: recursive
+          lfs: true
+
+      # Ensure every LFS-tracked file (emulator cores, skins, …) is fully
+      # materialised. actions/checkout already fetches them, but this makes
+      # the build resilient if LFS smudging was skipped for any reason.
+      - name: Pull Git LFS objects
+        run: |
+          git lfs install
+          git lfs pull
+          git lfs checkout
+
+      # ------------------------------------------------------------------
+      # 2. Select the Xcode version available on the runner.
+      #    The project requires Xcode 16+; macos-15 runners ship several.
+      # ------------------------------------------------------------------
+      - name: Select Xcode
+        run: |
+          set -euo pipefail
+          # Prefer the newest Xcode 16.x bundled with the runner image; fall
+          # back to whatever the runner already selected.
+          for candidate in /Applications/Xcode_16*.app; do
+            if [ -d "$candidate" ]; then
+              echo "Selecting $candidate"
+              sudo xcode-select -s "$candidate/Contents/Developer"
+              break
+            fi
+          done
+          xcodebuild -version
+
+      # ------------------------------------------------------------------
+      # 3. Cache Swift Package Manager packages.
+      #
+      #    The project pulls in a large number of SPM packages. Caching the
+      #    SourcePackages directory produced by `xcodebuild -resolvePackageDependencies`
+      #    together with the shared SPM caches cuts build times significantly.
+      # ------------------------------------------------------------------
+      - name: Cache Swift Package Manager dependencies
+        uses: actions/cache@v4
+        with:
+          path: |
+            ${{ env.XCODE_PROJECT_DIR }}/SourcePackages
+            ~/.swiftpm
+            ~/Library/Caches/org.swift.swiftpm
+            ~/Library/org.swift.swiftpm
+          key: spm-${{ runner.os }}-${{ hashFiles(format('{0}/ManicEmu.xcodeproj/project.xcworkspace/xcshareddata/swiftpm/Package.resolved', env.XCODE_PROJECT_DIR)) }}
+          restore-keys: |
+            spm-${{ runner.os }}-
+
+      # ------------------------------------------------------------------
+      # 4. Resolve / fetch Swift packages (also validates the project file).
+      # ------------------------------------------------------------------
+      - name: Resolve Swift packages
+        working-directory: ${{ env.XCODE_PROJECT_DIR }}
+        run: >
+          xcodebuild -resolvePackageDependencies
+          -project ManicEmu.xcodeproj
+          -scheme "${{ inputs.scheme }}"
+          -clonedSourcePackagesDirPath SourcePackages
+
+      # ------------------------------------------------------------------
+      # 5. Archive the app *unsigned*.
+      #
+      #    CODE_SIGNING_ALLOWED=NO builds and archives without requiring any
+      #    signing identity, certificate, or provisioning profile.
+      #    CODE_SIGN_STYLE=Manual plus an empty DEVELOPMENT_TEAM make sure
+      #    Xcode does not try to talk to an Apple account.
+      #
+      #    If the scheme or project path ever changes, update the `scheme`
+      #    input default and the XCODE_PROJECT_DIR env variable above.
+      # ------------------------------------------------------------------
+      - name: Archive (unsigned)
+        working-directory: ${{ env.XCODE_PROJECT_DIR }}
+        run: |
+          set -o pipefail
+          xcodebuild archive \
+            -project ManicEmu.xcodeproj \
+            -scheme "${{ inputs.scheme }}" \
+            -configuration "${{ inputs.configuration }}" \
+            -destination 'generic/platform=iOS' \
+            -archivePath "../${{ env.ARCHIVE_PATH }}" \
+            -clonedSourcePackagesDirPath SourcePackages \
+            CODE_SIGNING_ALLOWED=NO \
+            CODE_SIGNING_REQUIRED=NO \
+            CODE_SIGN_STYLE=Manual \
+            CODE_SIGN_IDENTITY="" \
+            DEVELOPMENT_TEAM="" \
+            PROVISIONING_PROFILE_SPECIFIER=""
+
+      # ------------------------------------------------------------------
+      # 6. Export an unsigned .ipa from the archive.
+      #
+      #    The export options plist (Scripts/ExportOptions-Unsigned.plist)
+      #    does not specify a signing team or certificate, so the exported
+      #    app stays unsigned and can be re-signed on-device / at install
+      #    time by the sideloading tool of choice.
+      # ------------------------------------------------------------------
+      - name: Export unsigned IPA
+        run: >
+          xcodebuild -exportArchive
+          -archivePath "${{ env.ARCHIVE_PATH }}"
+          -exportPath "${{ env.EXPORT_PATH }}"
+          -exportOptionsPlist "${{ env.EXPORT_OPTIONS_PLIST }}"
+
+      # ------------------------------------------------------------------
+      # 7. Rename the exported IPA to something stable and upload it as a
+      #    downloadable workflow artifact.
+      # ------------------------------------------------------------------
+      - name: Prepare IPA artifact
+        run: |
+          set -euo pipefail
+          mkdir -p artifact
+          ipa_path="$(find "${{ env.EXPORT_PATH }}" -maxdepth 1 -name '*.ipa' | head -n 1)"
+          if [ -z "$ipa_path" ]; then
+            echo "::error::No .ipa was produced by xcodebuild -exportArchive"
+            exit 1
+          fi
+          echo "Exported IPA: $ipa_path"
+          cp "$ipa_path" "artifact/ManicEmu-unsigned.ipa"
+          ls -lh artifact/
+
+      - name: Upload unsigned IPA
+        uses: actions/upload-artifact@v4
+        with:
+          name: ManicEmu-unsigned-ipa
+          path: artifact/ManicEmu-unsigned.ipa
+          if-no-files-found: error
+          retention-days: 14
