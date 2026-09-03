@@ -861,7 +861,7 @@ extension _R {
             return components.url!
         }
 #if SIDE_LOAD
-        static let EnableJITUrl = URL(string: "stikjit://enable-jit?bundle-id=com.aoshuang.manicemu&script-name=universal.js")!
+        static let EnableJITUrl = URL(string: "stosdebug://enableJIT?bundleId=com.aoshuang.manicemu&appName=\(AppName)&relaunchApp=true")!
 #endif
         static let Gamehacking = URL(string: "https://gamehacking.org/")!
         static func GamehackingSearch(gameType: GameType, gameName: String) -> URL? {
