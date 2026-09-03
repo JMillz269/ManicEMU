@@ -29,7 +29,7 @@
 		390955369D6D495092F62AC2 /* Device in Frameworks */ = {isa = PBXBuildFile; productRef = 578E26E22FD41F8300A2749A /* Device */; };
 		3C1B9BAFB4C4403B92AD40D6 /* BlurUIKit in Frameworks */ = {isa = PBXBuildFile; productRef = 5706B0BD2DFDE4570066122E /* BlurUIKit */; };
 		3CC0A81B407547FBA1CF0693 /* C64.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37C004DF500A40988FE64A18 /* C64.swift */; };
-		3DD4E96091F64806BA370918 /* CollectionViewPagingLayout in Frameworks */ = {isa = PBXBuildFile; productRef = 578E209D2FD1B8CB00A2749A /* CollectionViewPagingLayout */; };
+		3DD4E96091F64806BA370918 /* CollectionViewPagingLayout in Frameworks */ = {isa = PBXBuildFile; productRef = 57ABFAC92FE98443001C1425 /* CollectionViewPagingLayout */; };
 		3E00CA4429104FD6937382A8 /* SwiftCloudDrive in Frameworks */ = {isa = PBXBuildFile; productRef = 57F0D84A2DE2E7A600760F57 /* SwiftCloudDrive */; };
 		478A7D3ED65840479AA36B1F /* Libretro.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 57BFBE172DD32F7700AABF98 /* Libretro.framework */; };
 		568CCBBFAD4A4409BB9E3CCB /* ColorfulX in Frameworks */ = {isa = PBXBuildFile; productRef = 5726FF452D741F5C00041AD5 /* ColorfulX */; };
@@ -258,9 +258,9 @@
 		578452BA2F6A79370020A88F /* DOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 578452B92F6A79340020A88F /* DOS.swift */; };
 		578452C02F6A7F500020A88F /* dosbox.pure.libretro.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 578452BE2F6A7F380020A88F /* dosbox.pure.libretro.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		578E1FF62FD16A4600A2749A /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 578E1FF52FD16A4600A2749A /* SnapKit */; };
-		578E20912FD16DA500A2749A /* CollectionViewPagingLayout in Frameworks */ = {isa = PBXBuildFile; productRef = 578E20902FD16DA500A2749A /* CollectionViewPagingLayout */; };
-		578E209E2FD1B8CB00A2749A /* CollectionViewPagingLayout in Frameworks */ = {isa = PBXBuildFile; productRef = 578E209D2FD1B8CB00A2749A /* CollectionViewPagingLayout */; };
-		578E20A32FD1B94E00A2749A /* DNSPageView in Frameworks */ = {isa = PBXBuildFile; productRef = 578E20A22FD1B94E00A2749A /* DNSPageView */; };
+		578E20912FD16DA500A2749A /* CollectionViewPagingLayout in Frameworks */ = {isa = PBXBuildFile; productRef = 57ABFAC92FE98443001C1425 /* CollectionViewPagingLayout */; };
+		578E209E2FD1B8CB00A2749A /* CollectionViewPagingLayout in Frameworks */ = {isa = PBXBuildFile; productRef = 57ABFAC92FE98443001C1425 /* CollectionViewPagingLayout */; };
+		578E20A32FD1B94E00A2749A /* DNSPageView in Frameworks */ = {isa = PBXBuildFile; productRef = 57ABFAD02FE9849D001C1425 /* DNSPageView */; };
 		578E20AA2FD1C40700A2749A /* ProHUD in Frameworks */ = {isa = PBXBuildFile; productRef = 578E20A92FD1C40700A2749A /* ProHUD */; };
 		578E22F42FD1EE7500A2749A /* azahar.libretro.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 578E22F12FD1EE6600A2749A /* azahar.libretro.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		578E23032FD27DA800A2749A /* CloudServiceKit in Frameworks */ = {isa = PBXBuildFile; productRef = 578E23022FD27DA800A2749A /* CloudServiceKit */; };
@@ -707,9 +707,9 @@
 		5790951F303C7D9100A53656 /* CoreBluetooth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 571748382DA26F1E007CCE25 /* CoreBluetooth.framework */; };
 		57909520303C7D9100A53656 /* Permission in Frameworks */ = {isa = PBXBuildFile; productRef = 578E26C82FD41B6300A2749A /* Permission */; };
 		57909521303C7D9100A53656 /* BlurUIKit in Frameworks */ = {isa = PBXBuildFile; productRef = 5706B0BD2DFDE4570066122E /* BlurUIKit */; };
-		57909522303C7D9100A53656 /* DNSPageView in Frameworks */ = {isa = PBXBuildFile; productRef = 578E20A22FD1B94E00A2749A /* DNSPageView */; };
+		57909522303C7D9100A53656 /* DNSPageView in Frameworks */ = {isa = PBXBuildFile; productRef = 57ABFAD02FE9849D001C1425 /* DNSPageView */; };
 		57909523303C7D9100A53656 /* SMBClient in Frameworks */ = {isa = PBXBuildFile; productRef = 57F632A22D6F17AB007270E8 /* SMBClient */; };
-		57909524303C7D9100A53656 /* CollectionViewPagingLayout in Frameworks */ = {isa = PBXBuildFile; productRef = 578E209D2FD1B8CB00A2749A /* CollectionViewPagingLayout */; };
+		57909524303C7D9100A53656 /* CollectionViewPagingLayout in Frameworks */ = {isa = PBXBuildFile; productRef = 57ABFAC92FE98443001C1425 /* CollectionViewPagingLayout */; };
 		57909525303C7D9100A53656 /* ChromaColorPicker in Frameworks */ = {isa = PBXBuildFile; productRef = 57C759D92FD486BA0093A2B3 /* ChromaColorPicker */; };
 		57909526303C7D9100A53656 /* Schedule in Frameworks */ = {isa = PBXBuildFile; productRef = 57C759192FD42D030093A2B3 /* Schedule */; };
 		57909527303C7D9100A53656 /* Haptica in Frameworks */ = {isa = PBXBuildFile; productRef = 57C759052FD42BD80093A2B3 /* Haptica */; };
@@ -751,7 +751,7 @@
 		5790954B303C7D9100A53656 /* SFSafeSymbols in Frameworks */ = {isa = PBXBuildFile; productRef = 57C758FB2FD42AF00093A2B3 /* SFSafeSymbols */; };
 		5790954C303C7D9100A53656 /* NVActivityIndicatorView in Frameworks */ = {isa = PBXBuildFile; productRef = 578E26D32FD41D9300A2749A /* NVActivityIndicatorView */; };
 		5790954D303C7D9100A53656 /* MarqueeLabel in Frameworks */ = {isa = PBXBuildFile; productRef = 578E24432FD3EEE300A2749A /* MarqueeLabel */; };
-		5790954E303C7D9100A53656 /* CollectionViewPagingLayout in Frameworks */ = {isa = PBXBuildFile; productRef = 578E20902FD16DA500A2749A /* CollectionViewPagingLayout */; };
+		5790954E303C7D9100A53656 /* CollectionViewPagingLayout in Frameworks */ = {isa = PBXBuildFile; productRef = 57ABFAC92FE98443001C1425 /* CollectionViewPagingLayout */; };
 		5790954F303C7D9100A53656 /* ConfettiSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 57E48D902D8D736B008000A3 /* ConfettiSwiftUI */; };
 		57909550303C7D9100A53656 /* ZIPFoundation in Frameworks */ = {isa = PBXBuildFile; productRef = 578E24002FD31C0100A2749A /* ZIPFoundation */; };
 		57909551303C7D9100A53656 /* Unrar in Frameworks */ = {isa = PBXBuildFile; productRef = 57F8A0B42FD31C0100A274A4 /* Unrar */; };
@@ -1544,7 +1544,7 @@
 		C77604CEA6544406AAC031FA /* C64.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37C004DF500A40988FE64A18 /* C64.swift */; };
 		C77E86321B3D4F4C8DF998E2 /* FluentDarkModeKit in Frameworks */ = {isa = PBXBuildFile; productRef = 579E54502FD4237B000F08E7 /* FluentDarkModeKit */; };
 		CB1115EC07B84A1F984C6D0C /* CoreBluetooth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 571748382DA26F1E007CCE25 /* CoreBluetooth.framework */; };
-		CB40A54BC3524226B63A8972 /* DNSPageView in Frameworks */ = {isa = PBXBuildFile; productRef = 578E20A22FD1B94E00A2749A /* DNSPageView */; };
+		CB40A54BC3524226B63A8972 /* DNSPageView in Frameworks */ = {isa = PBXBuildFile; productRef = 57ABFAD02FE9849D001C1425 /* DNSPageView */; };
 		CE17343B61E1466393584BD7 /* Haptica in Frameworks */ = {isa = PBXBuildFile; productRef = 57C759052FD42BD80093A2B3 /* Haptica */; };
 		D247CA47581E4F73B110A2B7 /* ZIPFoundation in Frameworks */ = {isa = PBXBuildFile; productRef = 578E24002FD31C0100A2749A /* ZIPFoundation */; };
 		D90358FF409D7405F5E406CC /* prboom.libretro.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 20B6A88FB41ED3142FD4FD9E /* prboom.libretro.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -1560,7 +1560,7 @@
 		E5385955E04D43598CAC5694 /* vice.x64sc.libretro.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 6A6021052A14459DA6F729AB /* vice.x64sc.libretro.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		E977CAA1F3C34827833FAF30 /* XCGLogger in Frameworks */ = {isa = PBXBuildFile; productRef = 5713306D2D91AFE00043C28A /* XCGLogger */; };
 		EAE31C39F6FF42DE8F5BA497 /* Schedule in Frameworks */ = {isa = PBXBuildFile; productRef = 57C759192FD42D030093A2B3 /* Schedule */; };
-		EE7572E891E3420A86A7E33F /* CollectionViewPagingLayout in Frameworks */ = {isa = PBXBuildFile; productRef = 578E20902FD16DA500A2749A /* CollectionViewPagingLayout */; };
+		EE7572E891E3420A86A7E33F /* CollectionViewPagingLayout in Frameworks */ = {isa = PBXBuildFile; productRef = 57ABFAC92FE98443001C1425 /* CollectionViewPagingLayout */; };
 		F0897C7A1C1045DDBD9D76AF /* DominantColors in Frameworks */ = {isa = PBXBuildFile; productRef = 57DF84BE2D637A1A00AA0AAB /* DominantColors */; };
 		F0C500000000000000000201 /* FocusTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0C500000000000000000101 /* FocusTypes.swift */; };
 		F0C500000000000000000202 /* Focusable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0C500000000000000000102 /* Focusable.swift */; };
@@ -15983,22 +15983,6 @@
 				version = 7.8.0;
 			};
 		};
-		578E209C2FD1B8CB00A2749A /* XCRemoteSwiftPackageReference "CollectionViewPagingLayout" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/Daiuno/CollectionViewPagingLayout.git";
-			requirement = {
-				branch = master;
-				kind = branch;
-			};
-		};
-		578E20A12FD1B94D00A2749A /* XCRemoteSwiftPackageReference "DNSPageView" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/Daiuno/DNSPageView.git";
-			requirement = {
-				branch = master;
-				kind = branch;
-			};
-		};
 		578E20A82FD1C40700A2749A /* XCRemoteSwiftPackageReference "ProHUD" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Daiuno/ProHUD.git";
@@ -16187,8 +16171,8 @@
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/SFSafeSymbols/SFSafeSymbols.git";
 			requirement = {
-				kind = exactVersion;
-				version = 7.0.0;
+				kind = revision;
+				revision = 770ccda676ee6fdaff057333f62498cf7b51d161;
 			};
 		};
 		57C759042FD42BD80093A2B3 /* XCRemoteSwiftPackageReference "Haptica" */ = {
@@ -16423,20 +16407,6 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 57B5923A2FD072C3003C4235 /* XCRemoteSwiftPackageReference "SnapKit" */;
 			productName = SnapKit;
-		};
-		578E20902FD16DA500A2749A /* CollectionViewPagingLayout */ = {
-			isa = XCSwiftPackageProductDependency;
-			productName = CollectionViewPagingLayout;
-		};
-		578E209D2FD1B8CB00A2749A /* CollectionViewPagingLayout */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 578E209C2FD1B8CB00A2749A /* XCRemoteSwiftPackageReference "CollectionViewPagingLayout" */;
-			productName = CollectionViewPagingLayout;
-		};
-		578E20A22FD1B94E00A2749A /* DNSPageView */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 578E20A12FD1B94D00A2749A /* XCRemoteSwiftPackageReference "DNSPageView" */;
-			productName = DNSPageView;
 		};
 		578E20A92FD1C40700A2749A /* ProHUD */ = {
 			isa = XCSwiftPackageProductDependency;

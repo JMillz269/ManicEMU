@@ -132,15 +132,26 @@ jobs:
 
       # ------------------------------------------------------------------
       # 4. Resolve / fetch Swift packages (also validates the project file).
+      #
+      #    The output is captured so we can guard against package identity
+      #    conflicts (e.g. a package referenced both remotely and via a local
+      #    path under Dependencies/, such as the CollectionViewPagingLayout /
+      #    DNSPageView duplication this workflow previously hit) turning into
+      #    a silent warning that later breaks archiving non-deterministically.
       # ------------------------------------------------------------------
       - name: Resolve Swift packages
         working-directory: ${{ env.XCODE_PROJECT_DIR }}
-        run: >
-          xcodebuild -resolvePackageDependencies
-          -project ManicEmu.xcodeproj
-          -scheme "${{ inputs.scheme }}"
-          -clonedSourcePackagesDirPath SourcePackages
-          -skipPackagePluginValidation
+        run: |
+          set -o pipefail
+          xcodebuild -resolvePackageDependencies \
+            -project ManicEmu.xcodeproj \
+            -scheme "${{ inputs.scheme }}" \
+            -clonedSourcePackagesDirPath SourcePackages \
+            -skipPackagePluginValidation 2>&1 | tee resolve-packages.log
+          if grep -qiE 'duplicate|multiple .*same identity|already in the workspace' resolve-packages.log; then
+            echo "::error::Package resolution reported a package identity conflict. Check for a package referenced both remotely and via a local path (e.g. under Dependencies/)."
+            exit 1
+          fi
 
       # ------------------------------------------------------------------
       # 5. Archive the app *unsigned*.
