@@ -36,6 +36,11 @@ on:
           - Release
           - Debug
 
+# The workflow only needs to read the repository contents; the IPA is
+# published via the artifact store, which does not use GITHUB_TOKEN.
+permissions:
+  contents: read
+
 # Concurrency: cancel an older in-progress build if the workflow is
 # re-dispatched so we do not waste macOS runner minutes.
 concurrency:
