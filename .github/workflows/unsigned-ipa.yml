@@ -140,6 +140,7 @@ jobs:
           -project ManicEmu.xcodeproj
           -scheme "${{ inputs.scheme }}"
           -clonedSourcePackagesDirPath SourcePackages
+          -skipPackagePluginValidation
 
       # ------------------------------------------------------------------
       # 5. Archive the app *unsigned*.
