@@ -15963,8 +15963,8 @@
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Lakr233/ColorfulX.git";
 			requirement = {
-				branch = main;
-				kind = branch;
+				kind = revision;
+				revision = 1f5584101d825eb588ef25fdb5805757b1f93cb1;
 			};
 		};
 		5742E1CB2FDA9FA10031A726 /* XCRemoteSwiftPackageReference "AttributedString" */ = {
@@ -16291,8 +16291,8 @@
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Lakr233/ColorfulX.git";
 			requirement = {
-				branch = main;
-				kind = branch;
+				kind = revision;
+				revision = 1f5584101d825eb588ef25fdb5805757b1f93cb1;
 			};
 		};
 		57CDCFBB2FD5D154005BA4C8 /* XCRemoteSwiftPackageReference "KeychainAccess" */ = {
